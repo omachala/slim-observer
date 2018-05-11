@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slim Observer Example</title>
+    <script src="./dist/slim-observer.min.js"></script>
+    <script>
+
+        (function () {
+
+            // create observable subject
+            var observable = new SlimObserver.Subject();
+
+            // create first listener
+            observable.subscribe(function (newValue) {
+                console.log('first subscriber:', newValue);
+            });
+
+            // create second listener
+            observable.subscribe(function (newValue) {
+                document.write('second subscriber: ' + newValue + '<br>');
+            });
+
+            observable.next('hello'); // emit value to all listeners
+            observable.next('world'); // emit another value
+
+        })();
+
+    </script>
+</head>
+<body>
+</body>
+</html>
