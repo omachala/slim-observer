@@ -1,8 +1,8 @@
 {
-  "name": "ts-project-seed",
-  "version": "1.0.2",
-  "description": "A seed project with the initial plumbing for TypeScript.",
-  "main": "index.js",
+  "name": "slim-observer",
+  "version": "1.0.0",
+  "description": "Slim javascript observer pattern implementation.",
+  "main": "dist/slim-observer.min.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && npm run lint && tsc -p tsconfig.json && npm run uglify",
@@ -14,15 +14,15 @@
     "cover": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
-    "url": "https://github.com/metadevpro/ts-project-seed"
+    "url": "https://github.com/omachala/slim-observer"
   },
   "keywords": [
     "typescript",
-    "scaffolding"
+    "observer"
   ],
   "author": {
-    "name": "Pedro J. Molina",
-    "url": "http://pjmolina.com"
+    "name": "Ondrej Machala",
+    "url": "https://github.com/omachala"
   },
   "license": "CC0-1.0",
   "nyc": {
