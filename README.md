@@ -3,8 +3,8 @@
 Javascript (typescript) implementation of observer pattern on less then 100 rows.
 It provides just o few most common functions and minified version is smaller then 2kB.
 
-![Travis](https://img.shields.io/travis/omachala/slim-observer.svg)
-![Coveralls github](https://img.shields.io/coveralls/github/omachala/slim-observer.svg)
+[![Travis](https://img.shields.io/travis/omachala/slim-observer.svg)](https://travis-ci.org/omachala/slim-observer)
+[![Coveralls github](https://img.shields.io/coveralls/github/omachala/slim-observer.svg)](https://coveralls.io/github/omachala/slim-observer)
 ![GitHub package version](https://img.shields.io/github/package-json/v/omachala/slim-observer.svg)
 
 ## Usage 
