@@ -3,80 +3,81 @@
 Javascript (typescript) implementation of observer pattern on less then 100 rows.
 It provides just o few most common functions and minified version is smaller then 2kB.
 
-[![Build Status](https://travis-ci.org/omachala/slim-observer.svg?branch=master)](https://travis-ci.org/omachala/slim-observer)
-[![Coverage Status](https://coveralls.io/repos/github/omachala/slim-observer/badge.svg?branch=master)](https://coveralls.io/github/omachala/slim-observer?branch=master)
+[![Travis](https://img.shields.io/travis/omachala/slim-observer.svg)](https://travis-ci.org/omachala/slim-observer)
+[![Coveralls github](https://img.shields.io/coveralls/github/omachala/slim-observer.svg)](https://coveralls.io/github/omachala/slim-observer)
+![GitHub package version](https://img.shields.io/github/package-json/v/omachala/slim-observer.svg)
+
+## Usage 
+
+Basic usage
+```js
+// create observable subject
+var observable = new Subject();
+
+// create first listener
+observable.subscribe(function(newValue){
+    alert(newValue);
+});
+
+// create second listener
+observable.subscribe(function(newValue){
+    console.log(newValue);
+});
+
+observable.next('hello'); // emit value to all listeners
+observable.next('world'); // emit another value
+```
+
+Get last emitted value
+```js
+observable.getLast();
+```
+
+Create subject with initial value
+```js
+var observable = new Subject('initial value');
+```
+
+New subscriber with all history values replay.
+```js
+observable.replayAndSubscribe(function(newValue){
+    console.log(newValue);
+});
+```
+
+Unsubscribe existing listener.
+ ```js
+var observable = new Subject();
+
+var subscriber = observable.subscribe(function(newValue){
+    alert(newValue);
+});
+
+subscriber.unsubscribe();
+```
+
+Emitting only unique values (if new value is different).
+```js
+observable.nextUnique(123).nextUnique(123); // emits value to subscribers only once
+```
 
 ## Building tools
 
-### Lint
-Linting using tslint.
-
-```
-npm run lint
-```
-
-### Clean
-Clear the `dist/` folder.
-
-```
-npm run clean
-```
-
 ### Build
 Transpile TS code to JS in `dist/` folder. Maps included.
-
 ```
 npm run build
 ```
 
-Continous build:
-
-```
-npm run build:w
-```
-
-### Uglify
-Concat and minify all JS files in `dist/` folder to one output (default `dist/all.min.js`).
-
-```
-npm run uglify
-```
-
 ### Unit Test
 Tests framework used are: mocha & chai.
-
-TDD mode to run it concurrently with your editions:
-
-```
-npm run test:tdd
-```
-
-CI mode to run it only one:
-
 ```
 npm test
 ```
 
 Testing with coverage:
-
 ```
 nyc npm test
-nyc report -r text lcov html
-coverage/index.html
-```
-
-
-### Coverage Test
-TDD mode to run it concurrently with your editions:
-
-```
-npm run test:tdd
-```
-
-CI mode to run it only one:
-
-```
-npm run test
 ```
 
 ## License
