@@ -3,6 +3,9 @@
 Javascript (typescript) implementation of observer pattern on less then 100 rows.
 It provides just o few most common functions and minified version is smaller then 2kB.
 
+[![Build Status](https://travis-ci.org/omachala/slim-observer.svg?branch=master)](https://travis-ci.org/omachala/slim-observer)
+[![Coverage Status](https://coveralls.io/repos/github/omachala/slim-observer/badge.svg?branch=master)](https://coveralls.io/github/omachala/slim-observer?branch=master)
+
 ## Building tools
 
 ### Lint
