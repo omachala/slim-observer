@@ -1,0 +1,18 @@
+{
+  "name": "slim-observer",
+  "description": "Slim javascript observer pattern implementation.",
+  "main": "dist/slim-observer.min.js",
+  "authors": [
+    {
+      "name": "Ondrej Machala",
+      "email": "o.machala@gmail.com",
+      "url": "https://github.com/omachala"
+    }
+  ],
+  "license": "CC0-1.0",
+  "keywords": [
+    "typescript",
+    "observer"
+  ],
+  "homepage": "https://github.com/omachala/slim-observer"
+}

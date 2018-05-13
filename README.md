@@ -7,12 +7,36 @@ It provides just o few most common functions and minified version is smaller the
 [![Coveralls github](https://img.shields.io/coveralls/github/omachala/slim-observer.svg)](https://coveralls.io/github/omachala/slim-observer)
 ![GitHub package version](https://img.shields.io/github/package-json/v/omachala/slim-observer.svg)
 
+## Installation
+
+`slim-observer` is available on NPM and Bower. To install it, type:
+
+    $ npm install slim-observer
+
+or
+
+    $ bower install slim-observer
+
 ## Usage 
+
+You can also use it within the browser; install via npm/bower and use the `slim-observer.min.js` file found within the download. For example:
+
+```html
+<script src="./node_modules/slim-observer/dist/slim-observer.min.js"></script>
+<script>
+    var observable = new SlimObserver.Subject();
+    ...
+</script>
+```
+See full example in `example.html`
+
+
+#### Functions
 
 Basic usage
 ```js
 // create observable subject
-var observable = new Subject();
+var observable = new SlimObserver.Subject();
 
 // create first listener
 observable.subscribe(function(newValue){
@@ -35,7 +59,7 @@ observable.getLast();
 
 Create subject with initial value
 ```js
-var observable = new Subject('initial value');
+var observable = new SlimObserver.Subject('initial value');
 ```
 
 New subscriber with all history values replay.
@@ -47,7 +71,7 @@ observable.replayAndSubscribe(function(newValue){
 
 Unsubscribe existing listener.
  ```js
-var observable = new Subject();
+var observable = new SlimObserver.Subject();
 
 var subscriber = observable.subscribe(function(newValue){
     alert(newValue);
